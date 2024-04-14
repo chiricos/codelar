@@ -72,12 +72,19 @@ https://jwt-auth.readthedocs.io/en/develop/
 ## Apis
 
 POST       api/auth/login 
+
 POST       api/auth/logout 
+
 POST       api/auth/me 
+
 POST       api/auth/refresh 
+
 POST       api/register 
+
 GET|HEAD   api/user 
+
 GET|HEAD   api/users
+
 
 ## Curl
 
