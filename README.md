@@ -68,3 +68,45 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## JWT
 
 https://jwt-auth.readthedocs.io/en/develop/
+
+## Apis
+
+POST       api/auth/login 
+POST       api/auth/logout 
+POST       api/auth/me 
+POST       api/auth/refresh 
+POST       api/register 
+GET|HEAD   api/user 
+GET|HEAD   api/users
+
+## Curl
+
+curl --location 'http://codelar.ddev.site/api/register' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "codelar",
+    "email": "info@codelar.com",
+    "password": "12345678"
+}'
+
+curl --location 'http://codelar.ddev.site/api/auth/login' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "info@codelar.com",
+    "password": "12345678"
+}'
+
+curl --location 'http://codelar.ddev.site/api/users' \
+--header 'Authorization: Bearer {token}'
+
+curl --location --request POST 'http://codelar.ddev.site/api/auth/refresh' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {token}'
+
+curl --location --request POST 'http://codelar.ddev.site/api/auth/logout' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {token}'
